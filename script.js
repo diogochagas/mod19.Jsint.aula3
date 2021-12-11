@@ -1,21 +1,22 @@
 
-// SELETOR POR ID
-document.querySelector('#título').innerHTML = 'EXEMPLO'
 
-// SELETOR POR TAG
-document.querySelector('a').InnerText = '<b>teste ancora</b>'
+let menuMobile = document.querySelector('.menuMobile')
+let botaoMenu = document.querySelector('.botaoMenu')
 
-// SELECIONANDO MAIS DE 1 ITEM POR TAG
-let ancoras = document.querySelectorAll('a')
 
-ancoras.forEach(function(elemento){ // função anonima / callback
-  elemento.innerHTML = 'teste'
-})
+let aberto = false
 
-// SELECIONANDO MAIS DE 1 ITEM POR CLASSE
-let boxes = document.querySelectorAll('.box')
+function abrirOuFecharMenu() {
 
-boxes.forEach(function(box){
-  box.innerHTML = 'box'
-})
+  if (aberto === true) {
+    aberto = false
+    menuMobile.classList.remove('aberto')
+    botaoMenu.innerText  = "abrir menu"
+  } else if (aberto === false) {
+    aberto = true
+    menuMobile.classList.add('aberto')
+    botaoMenu.innerText  = "fechar menu"
+  } 
+ 
 
+}
