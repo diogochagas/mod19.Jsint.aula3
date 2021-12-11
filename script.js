@@ -1,22 +1,12 @@
 
 
-let menuMobile = document.querySelector('.menuMobile')
-let botaoMenu = document.querySelector('.botaoMenu')
+let toast = document.querySelector('.toast')
+let botaoCadastrar = document.querySelector('#botaoCadastrar')
 
+botaoCadastrar.onclick = function() {
+  toast.classList.add('visible')
 
-let aberto = false
-
-function abrirOuFecharMenu() {
-
-  if (aberto === true) {
-    aberto = false
-    menuMobile.classList.remove('aberto')
-    botaoMenu.innerText  = "abrir menu"
-  } else if (aberto === false) {
-    aberto = true
-    menuMobile.classList.add('aberto')
-    botaoMenu.innerText  = "fechar menu"
-  } 
- 
-
+  setTimeout(function(){
+    toast.classList.remove('visible')
+  }, 5000)
 }
